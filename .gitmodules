@@ -1,0 +1,3 @@
+[submodule "mr1d_dependencies/pegasus_gazebo_plugins"]
+	path = mr1d_dependencies/pegasus_gazebo_plugins
+	url = git@github.com:Yougo-robotics/pegasus_gazebo_plugins.git

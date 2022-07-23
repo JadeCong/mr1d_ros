@@ -1,0 +1,6 @@
+<launch>
+    
+    <!-- Load RQT with a pre-setup GUI for mr1d controls from a perspective file  -->
+    <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" respawn="false" output="screen" args="--perspective-file $(find mr1d_control)/config/mr1d_rqt.perspective"/>
+    
+</launch>

@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<robot>
+  
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/mr1d</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  
+  <!-- gazebo link gravity -->
+  <gazebo>
+    <gravity>true</gravity>
+  </gazebo>
+  
+  <!-- gazebo link self collide -->
+  <gazebo>
+    <self_collide>false</self_collide>
+  </gazebo>
+  
+  <!-- gazebo link kinematic -->
+  <gazebo>
+    <kinematic>true</kinematic>
+  </gazebo>
+  
+  <!-- base_link -->
+  <gazebo reference="base_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <!-- motor_1_link -->
+  <gazebo reference="motor_1_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  
+  <!-- link_1_1_link -->
+  <gazebo reference="link_1_1_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  
+  <!-- link_2_1_link -->
+  <gazebo reference="link_2_1_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+  
+  <!-- motor_2_link -->
+  <gazebo reference="motor_2_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  
+  <!-- link_1_2_link -->
+  <gazebo reference="link_1_2_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  
+  <!-- link_2_2_link -->
+  <gazebo reference="link_2_2_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+  
+  <!-- motor_3_link -->
+  <gazebo reference="motor_3_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  
+  <!-- link_1_3_link -->
+  <gazebo reference="link_1_3_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  
+  <!-- link_2_3_link -->
+  <gazebo reference="link_2_3_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+  
+  <!-- platform_link -->
+  <gazebo reference="platform_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <!-- closed loop joint for link_2_2_link -->
+  <gazebo>
+    <joint name='platform_2_joint' type='revolute'>
+      <pose relative_to='link_2_2_link'>0 0 0.055 -1.57079632 0.52359878 -2.35619449</pose>
+      <parent>link_2_2_link</parent>
+      <child>platform_link</child>
+      <axis>
+        <xyz>-0.61237244 0.35355339 0.70710678</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>0.5</upper>
+          <effort>5</effort>
+          <velocity>3</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+  </gazebo>
+  
+  <!-- closed loop joint for link_2_3_link -->
+  <gazebo>
+    <joint name='platform_3_joint' type='revolute'>
+      <pose relative_to='link_2_3_link'>0 0 0.055 1.57079632 0.52359878 0.78539816</pose>
+      <parent>link_2_3_link</parent>
+      <child>platform_link</child>
+      <axis>
+        <xyz>0.61237244 0.35355339 0.70710678</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>0.5</upper>
+          <effort>5</effort>
+          <velocity>3</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+  </gazebo>
+  
+</robot>
