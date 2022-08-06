@@ -17,4 +17,5 @@
 
 ## 4. Package Dependency: Package pegasus_gazebo_plugins
 
-> 功能：用以解决urdf模型描述文件中不支持闭链的问题，插件内容不完整，编译存在问题（已弃用）。
+> 功能：用以解决urdf模型描述文件中不支持闭链的问题，插件内容不完整，编译存在问题（已弃用）。<br>
+> 链接：https://github.com/Yougo-robotics/pegasus_gazebo_plugins
